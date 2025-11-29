@@ -1,34 +1,25 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HarawoTalk Admin</title>
-
-  <!-- Netlify Identity widget (for login) -->
+  
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
-  <!-- Decap CMS -->
-  <script src="https://unpkg.com/decap-cms@latest/dist/decap-cms.js"></script>
 </head>
 <body>
-  <h2 style="font-family:sans-serif;text-align:center;margin-top:3rem;">
-    Loading HarawoTalk Admin…
-  </h2>
+  <script src="https://unpkg.com/decap-cms@^3.1.2/dist/decap-cms.js"></script>
 
   <script>
-    // Ensure scripts are loaded and then handle Netlify Identity redirects
-    document.addEventListener("DOMContentLoaded", function () {
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", function (user) {
-          if (!user) {
-            window.netlifyIdentity.on("login", function () {
-              document.location.href = "/admin/";
-            });
-          }
-        });
-      }
-    });
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
   </script>
 </body>
 </html>
