@@ -19,10 +19,13 @@
       CMS.init({
         config: {
           backend: {
-            name: "github",
-            repo: "harawotalk/Harawo-Talks",
-            branch: "main"
-          },
+          backend: {
+  name: "github",
+  repo: "harawotalk/Harawo-Talks",
+  branch: "main",
+  site_domain: "harawotalk.com",
+  auth_type: "implicit"
+},
           media_folder: "images/uploads",
           public_folder: "/images/uploads",
           collections: [
