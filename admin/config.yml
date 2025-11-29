@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: harawotalk/Harawo-Talks
   branch: main
 
 media_folder: "images/uploads"
