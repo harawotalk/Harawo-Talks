@@ -1,6 +1,12 @@
+site_url: https://harawotalk.com
+display_url: https://harawotalk.com
+
 backend:
   name: git-gateway
   branch: main
+  accept_roles:
+    - admin
+    - editor
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
