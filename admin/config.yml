@@ -1,12 +1,6 @@
-site_url: https://harawotalk.com
-display_url: https://harawotalk.com
-
 backend:
   name: git-gateway
   branch: main
-  accept_roles:
-    - admin
-    - editor
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
@@ -16,8 +10,8 @@ collections:
     label: "Blog"
     folder: "blog"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Body", name: "body", widget: "markdown" }
