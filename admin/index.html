@@ -2,24 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>HarawoTalk Admin</title>
 
   <!-- Netlify Identity -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
-  <!-- Force Decap CMS to auto-load -->
-  <script>
-    window.CMS_MANUAL_INIT = false;
-  </script>
-
   <!-- Decap CMS -->
   <script src="https://unpkg.com/decap-cms@latest/dist/decap-cms.js"></script>
+
+  <script>
+    // Initialize immediately after Decap loads
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.CMS) {
+        window.CMS.init();
+      }
+    });
+  </script>
 </head>
 <body>
-
   <h2 style="font-family:sans-serif;text-align:center;margin-top:3rem;">
-    Loading HarawoTalk Admin…
+    Loading HarawoTalk Admin...
   </h2>
 
   <script>
@@ -33,6 +36,5 @@
       });
     }
   </script>
-
 </body>
 </html>
