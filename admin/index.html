@@ -1,9 +1,47 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8" />
-  <title>HarawoTalk Admin</title>
-  <script src="https://unpkg.com/decap-cms@latest/dist/decap-cms.js"></script>
-</head>
-<body></body>
+  <head>
+    <meta charset="utf-8" />
+    <title>HarawoTalk Admin</title>
+
+    <!-- Decap CMS script -->
+    <script src="https://unpkg.com/decap-cms@latest/dist/decap-cms.js"></script>
+  </head>
+  <body>
+    <h2 style="font-family:sans-serif;text-align:center;margin-top:3rem;">
+      Loading HarawoTalk Admin…
+    </h2>
+
+    <script>
+      // We will pass the config from here instead of using config.yml
+      window.CMS_MANUAL_INIT = true;
+
+      CMS.init({
+        config: {
+          backend: {
+            name: "github",
+            repo: "harawotalk/Harawo-Talks",
+            branch: "main"
+          },
+          media_folder: "images/uploads",
+          public_folder: "/images/uploads",
+          collections: [
+            {
+              name: "blog",
+              label: "Blog",
+              folder: "blog",
+              create: true,
+              slug: "{{year}}-{{month}}-{{day}}-{{slug}}",
+              fields: [
+                { label: "Title", name: "title", widget: "string" },
+                { label: "Date", name: "date", widget: "datetime" },
+                { label: "Category", name: "category", widget: "string" },
+                { label: "Body", name: "body", widget: "markdown" }
+              ]
+            }
+          ]
+        }
+      });
+    </script>
+  </body>
 </html>
