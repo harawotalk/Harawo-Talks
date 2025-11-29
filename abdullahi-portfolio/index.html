@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdullahi Ibrahim | Author & Storyteller</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#1e3a8a',
+                            gold: '#d97706',
+                            light: '#f8fafc',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Lato', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <style>
+        /* Reveal Animation Class */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        /* Active State for Reveal (triggered by JS) */
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Book Card Hover Effects */
+        .book-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .book-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Utility for aspect ratios if Tailwind plugin isn't loaded */
+        .aspect-video {
+            aspect-ratio: 16 / 9;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 antialiased font-sans">
+
+<!-- NAVIGATION -->
+<nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm border-b border-gray-100 transition-all duration-300" id="navbar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+            <!-- Logo -->
+            <a href="#home" class="font-serif text-2xl font-bold text-brand-blue tracking-tight">
+                Abdullahi<span class="text-brand-gold">.</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#home" class="text-sm uppercase tracking-wider text-gray-600 hover:text-brand-blue transition-colors">Home</a>
+                <a href="#about" class="text-sm uppercase tracking-wider text-gray-600 hover:text-brand-blue transition-colors">About</a>
+                <a href="#books" class="text-sm uppercase tracking-wider text-gray-600 hover:text-brand-blue transition-colors">Books</a>
+                <a href="#media" class="text-sm uppercase tracking-wider text-gray-600 hover:text-brand-blue transition-colors">Videos</a>
+                <a href="#blog" class="text-sm uppercase tracking-wider text-gray-600 hover:text-brand-blue transition-colors">HarawoTalks</a>
+                <a href="#contact" class="px-5 py-2.5 bg-brand-blue text-white rounded-full text-sm font-semibold hover:bg-blue-800 transition-all shadow-md hover:shadow-lg">
+                    Contact Me
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-btn" class="text-gray-700 hover:text-brand-blue focus:outline-none">
+                    <i data-lucide="menu" class="w-7 h-7"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg">
+        <div class="px-4 pt-2 pb-6 space-y-2">
+            <a href="#home" class="mobile-link block px-3 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-brand-blue rounded-md">Home</a>
+            <a href="#about" class="mobile-link block px-3 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-brand-blue rounded-md">About</a>
+            <a href="#books" class="mobile-link block px-3 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-brand-blue rounded-md">Books</a>
+            <a href="#media" class="mobile-link block px-3 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-brand-blue rounded-md">Videos & Media</a>
+            <a href="#blog" class="mobile-link block px-3 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-brand-blue rounded-md">HarawoTalks</a>
+            <a href="#contact" class="mobile-link block px-3 py-3 text-base font-medium text-brand-gold font-bold hover:bg-gray-50 rounded-md">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO SECTION -->
+<section id="home" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+    <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-brand-blue/5 blur-3xl -z-10"></div>
+    <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-brand-gold/10 blur-3xl -z-10"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal active">
+        <span class="inline-block py-1 px-3 rounded-full bg-blue-50 text-brand-blue text-xs font-bold uppercase tracking-widest mb-6">
+            Author &amp; Storyteller
+        </span>
+
+        <h1 class="font-serif text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+            Stories That Rise <br class="hidden md:block" />
+            <span class="text-brand-blue">Above Struggle.</span>
+        </h1>
+
+        <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-10">
+            Exploring the human spirit through mystery, culture, and personal growth. Join me on a journey of healing, learning, and re-imagining the future.
+        </p>
+
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="#books" class="px-8 py-4 bg-brand-blue text-white rounded-full font-semibold hover:bg-blue-800 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1">
+                Explore My Books
+            </a>
+            <a href="#about" class="px-8 py-4 bg-white text-gray-800 border border-gray-200 rounded-full font-semibold hover:bg-gray-50 transition-all shadow-sm hover:shadow-md">
+                Read Bio
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section id="about" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div class="relative reveal">
+                <div class="absolute inset-0 bg-brand-gold rounded-2xl transform translate-x-3 translate-y-3"></div>
+                <!-- Author image -->
+                <img src="images/author.jpg" 
+                     alt="Abdullahi Ibrahim"
+                     class="relative z-10 w-full h-auto rounded-2xl shadow-xl grayscale hover:grayscale-0 transition-all duration-500 object-cover aspect-[4/5]">
+            </div>
+
+            <div class="reveal">
+                <h2 class="font-serif text-4xl font-bold text-gray-900 mb-6">About the Author</h2>
+                <div class="h-1 w-20 bg-brand-gold mb-8"></div>
+                
+                <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                    Hello, I am <strong>Abdullahi Ibrahim</strong>. I am an author of 11+ books, a dedicated kindergarten teacher, and a storyteller passionate about motivation, personal growth, and the immigrant journey.
+                </p>
+                
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    My writing spans across multiple genres including mystery, crime, personal finance, diaspora stories, children’s literature, and emotional wellness. Beyond the page, I create motivational content, run <em>HarawoTalks</em>, and engage in entrepreneurship projects.
+                </p>
+
+                <blockquote class="bg-blue-50 border-l-4 border-brand-blue p-6 italic text-gray-700 rounded-r-lg mb-8">
+                    "My mission is simple: helping people rise, heal, learn, and re-imagine their future through the power of stories and shared knowledge."
+                </blockquote>
+
+                <div class="flex items-center gap-4 text-gray-500 text-sm font-semibold tracking-wide uppercase">
+                    <span><i data-lucide="pen-tool" class="inline w-4 h-4 mr-1 text-brand-gold"></i> 11+ Books</span>
+                    <span><i data-lucide="mic" class="inline w-4 h-4 mr-1 text-brand-gold"></i> Speaker</span>
+                    <span><i data-lucide="heart" class="inline w-4 h-4 mr-1 text-brand-gold"></i> Mentor</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- BOOKS SECTION -->
+<section id="books" class="py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 reveal">
+            <h2 class="font-serif text-4xl font-bold text-gray-900 mb-4">Featured Books</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+                From gripping mysteries to powerful reflections, explore my published works and ongoing series.
+            </p>
+        </div>
+
+        <!-- Your books will be injected here by script.js -->
+        <div id="book-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <!-- Populated by JS -->
+        </div>
+    </div>
+</section>
+
+<!-- MEDIA SECTION -->
+<section id="media" class="py-24 bg-brand-blue text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6 reveal">
+            <div>
+                <h2 class="font-serif text-4xl font-bold mb-4">Videos &amp; Talks</h2>
+                <p class="text-blue-200">Motivational messages, reflections, and storytelling clips.</p>
+            </div>
+            <a href="https://www.youtube.com" target="_blank" class="inline-flex items-center text-brand-gold hover:text-white transition-colors font-semibold">
+                Visit YouTube Channel <i data-lucide="arrow-right" class="ml-2 w-4 h-4"></i>
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="aspect-video bg-black/30 rounded-xl overflow-hidden shadow-2xl reveal">
+                <!-- Using a placeholder for YouTube embed to prevent iframe issues -->
+                <div class="w-full h-full bg-gray-900 flex items-center justify-center relative group cursor-pointer">
+                     <i data-lucide="play-circle" class="w-16 h-16 text-white opacity-80 group-hover:opacity-100 transition-opacity"></i>
+                     <span class="absolute bottom-4 text-xs text-gray-400">Featured Video</span>
+                </div>
+            </div>
+            <div class="aspect-video bg-black/30 rounded-xl overflow-hidden shadow-2xl flex items-center justify-center reveal">
+                <div class="text-center p-6">
+                    <i data-lucide="mic" class="w-12 h-12 mx-auto text-white/50 mb-2"></i>
+                    <p class="text-sm font-semibold">Interview: The Immigrant Experience</p>
+                </div>
+            </div>
+            <div class="aspect-video bg-black/30 rounded-xl overflow-hidden shadow-2xl flex items-center justify-center reveal">
+                <div class="text-center p-6">
+                    <i data-lucide="video" class="w-12 h-12 mx-auto text-white/50 mb-2"></i>
+                    <p class="text-sm font-semibold">TikTok: Morning Motivation</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- BLOG / HARAWOTALKS -->
+<section id="blog" class="py-24 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 reveal">
+            <span class="text-brand-gold font-bold uppercase tracking-widest text-xs">The Blog</span>
+            <h2 class="font-serif text-4xl font-bold text-gray-900 mt-2">HarawoTalks</h2>
+            <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+                Reflections on struggle, resilience, identity, and the quiet moments that shape who we become.
+            </p>
+        </div>
+
+        <!-- BLOG POST 1 -->
+        <article class="flex flex-col md:flex-row gap-6 p-6 rounded-2xl border border-gray-200 hover:shadow-lg transition-all bg-white mb-8 reveal">
+            <div class="md:w-1/4">
+                <span class="text-sm text-gray-400 font-semibold">Nov 24, 2025</span>
+                <div class="mt-2 text-brand-blue font-bold text-sm uppercase">Reflection</div>
+            </div>
+            <div class="md:w-3/4">
+                <h3 class="text-xl font-bold text-gray-900 mb-2">The Courage to Start Over</h3>
+                <p class="text-gray-600 mb-4">
+                    Starting over is never easy. It asks for a kind of bravery that happens in silence — in early mornings,
+                    long nights, and moments when no one sees you. Most people only see the result, not the private battles
+                    that lead to the first step forward.
+                </p>
+                <p class="text-gray-600 mb-4">
+                    You do not start from zero; you start from experience. Experience makes you wiser, stronger, and more aware
+                    of who you are and what you deserve. Every time you choose to rise again, you are practicing courage,
+                    even if nobody claps for you.
+                </p>
+                <a href="#" class="text-brand-gold hover:text-brand-blue font-semibold text-sm inline-flex items-center">
+                    Read Full Post <i data-lucide="arrow-right" class="ml-1 w-3 h-3"></i>
+                </a>
+            </div>
+        </article>
+
+        <!-- BLOG POST 2 -->
+        <article class="flex flex-col md:flex-row gap-6 p-6 rounded-2xl border border-gray-200 hover:shadow-lg transition-all bg-white reveal">
+            <div class="md:w-1/4">
+                <span class="text-sm text-gray-400 font-semibold">Nov 10, 2025</span>
+                <div class="mt-2 text-brand-blue font-bold text-sm uppercase">Writing</div>
+            </div>
+            <div class="md:w-3/4">
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Why I Write Mystery Fiction</h3>
+                <p class="text-gray-600 mb-4">
+                    Mystery fiction is more than suspense; it is a mirror into human behavior. When characters are under pressure,
+                    their true nature rises to the surface — fear, loyalty, guilt, love, and regret all show up at once.
+                </p>
+                <p class="text-gray-600 mb-4">
+                    Through mystery, I explore questions about truth, silence, justice, and consequence. Behind every secret
+                    or crime, there is a human heart trying to protect something. That tension between what is hidden and what
+                    is revealed is why I am drawn to this genre.
+                </p>
+                <a href="#" class="text-brand-gold hover:text-brand-blue font-semibold text-sm inline-flex items-center">
+                    Read Full Post <i data-lucide="arrow-right" class="ml-1 w-3 h-3"></i>
+                </a>
+            </div>
+        </article>
+
+        <div class="text-center mt-10 reveal">
+            <span class="inline-block px-6 py-3 border border-gray-300 rounded-full text-gray-400 text-sm">
+                More HarawoTalks posts coming soon.
+            </span>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="py-24 bg-gray-900 text-white relative overflow-hidden">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 reveal">
+        <div class="text-center mb-12">
+            <h2 class="font-serif text-3xl md:text-4xl font-bold mb-4">Let's Connect</h2>
+            <p class="text-gray-400">Have a question about my books, speaking, or just want to say hello?</p>
+            <div class="mt-4 flex items-center justify-center gap-2 text-brand-gold">
+                <i data-lucide="mail" class="w-5 h-5"></i>
+                <a href="mailto:abdullahbrahiim@gmail.com" class="hover:underline">abdullahbrahiim@gmail.com</a>
+            </div>
+        </div>
+
+        <form class="space-y-6" onsubmit="event.preventDefault(); alert('Thank you! This is a demo form.');">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2">Name</label>
+                    <input type="text" class="w-full bg-gray-800 border border-gray-700 rounded-lg p-4 text-white focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition-colors" placeholder="Your Name">
+                </div>
+                <div>
+                    <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2">Email</label>
+                    <input type="email" class="w-full bg-gray-800 border border-gray-700 rounded-lg p-4 text-white focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition-colors" placeholder="your@email.com">
+                </div>
+            </div>
+            <div>
+                <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2">Message</label>
+                <textarea rows="5" class="w-full bg-gray-800 border border-gray-700 rounded-lg p-4 text-white focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition-colors" placeholder="How can I help you?"></textarea>
+            </div>
+            <button type="submit" class="w-full bg-brand-gold hover:bg-amber-700 text-white font-bold py-4 rounded-lg transition-all shadow-lg transform hover:-translate-y-1">
+                Send Message
+            </button>
+        </form>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-gray-950 text-gray-500 py-8 border-t border-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-2">
+            <span class="font-serif text-lg text-white">Abdullahi Ibrahim</span>
+            <span class="text-gray-600 text-sm">Author &amp; Storyteller</span>
+        </div>
+        <div class="flex items-center gap-4 text-sm">
+            <a href="https://substack.com/@harawotalks" target="_blank" class="hover:text-white">Substack</a>
+            <a href="https://www.tiktok.com/@harawotalks" target="_blank" class="hover:text-white">TikTok</a>
+            <a href="mailto:abdullahbrahiim@gmail.com" class="hover:text-white">Email</a>
+        </div>
+        <p class="text-xs text-gray-600">
+            &copy; <span id="year">2025</span> Abdullahi Ibrahim. All rights reserved.
+        </p>
+    </div>
+</footer>
+
+<script>
+    // 1. INITIALIZE ICONS
+    lucide.createIcons();
+
+    // Set current year in footer
+    document.getElementById('year').innerText = new Date().getFullYear();
+
+    // 2. BOOK DATA 
+    const books = [
+        {
+            title: "The Language of Silence",
+            category: "Psychology • Culture",
+            desc: "The Untold Stories of What We Don't Say. An exploration of silence in communication.",
+            image: "images/language-of-silence.jpg",
+            link: "https://www.amazon.com/dp/B0DR8SR5WN"
+        },
+        {
+            title: "Reflections of a Changing World",
+            category: "Poetry",
+            desc: "Poems on love, life, and transformation in a changing world.",
+            image: "images/reflections-of-a-changing-world.jpg",
+            link: "https://www.amazon.com/dp/B0DDXLFBVH"
+        },
+        {
+            title: "Echoes of the Horn",
+            category: "Fiction / Cultural",
+            desc: "Powerful stories rooted in the Horn of Africa and the diaspora.",
+            image: "images/echoes-of-the-horn.jpg",
+            link: "https://www.amazon.com/dp/B0DRP2BCLP"
+        },
+        {
+            title: "The Echoes of Tomorrow",
+            category: "Mystery / Thriller",
+            desc: "Shadows of memory and whispers of fate colliding in the future.",
+            image: "images/the-echoes-of-tomorrow.jpg",
+            link: "https://www.amazon.com/dp/B0DDSXD66C"
+        },
+        {
+            title: "The Lost Melody of the Desert Wind",
+            category: "Fiction",
+            desc: "Book 2 of The Echoes Chronicles, set across desert winds and memories.",
+            image: "images/the-lost-melody-of-the-desert-wind.jpg",
+            link: "https://www.amazon.com/dp/B0DDXJ44VC"
+        },
+        {
+            title: "From Dreams to Darkness",
+            category: "Fiction",
+            desc: "Grace's Journey. A gripping story of a young girl navigating struggle, identity, and hope.",
+            image: "images/from-dreams-to-darkness-graces-journey.jpg",
+            link: "https://www.amazon.com/dp/B0DHGRGMHM"
+        },
+        {
+            title: "The Court Interpreter’s Guidebook",
+            category: "Professional / Legal",
+            desc: "A comprehensive resource for aspiring and practicing court interpreters.",
+            image: "images/the-court-interpreters-guidebook.jpg",
+            link: "https://www.amazon.com/dp/B0DF63D5GQ"
+        },
+        {
+            title: "Personal Finance & Wealth Building",
+            category: "Finance / Wealth",
+            desc: "Practical steps for financial independence and building generational wealth.",
+            image: "images/personal-finance-wealth-building.jpg",
+            link: "https://www.amazon.com/dp/B0DFQGF7MK"
+        }
+    ];
+
+    // 3. RENDER BOOKS DYNAMICALLY
+    const bookGrid = document.getElementById('book-grid');
+
+    books.forEach((book, index) => {
+        const delay = index * 100; // Stagger animation
+        const card = document.createElement('div');
+        card.className = `book-card bg-white rounded-2xl p-4 shadow-sm border border-gray-100 flex flex-col h-full reveal`;
+        card.style.transitionDelay = `${delay}ms`;
+        
+        // Image handling with fallback
+        const imgElement = `<img src="${book.image}" onerror="this.src='https://placehold.co/400x600?text=Book+Cover'" alt="${book.title}" class="w-full h-full object-cover">`;
+
+        card.innerHTML = `
+            <div class="relative overflow-hidden rounded-xl bg-gray-200 mb-4 aspect-[2/3]">
+                ${imgElement}
+            </div>
+            <div class="flex flex-col flex-grow">
+                <span class="text-xs font-bold text-brand-blue uppercase tracking-wide mb-1">${book.category}</span>
+                <h3 class="font-serif text-xl font-bold text-gray-900 mb-2 leading-tight">${book.title}</h3>
+                <p class="text-gray-600 text-sm mb-4 flex-grow">${book.desc}</p>
+                
+                <div class="mt-auto space-y-2">
+                    <a href="${book.link}" class="block w-full text-center bg-gray-900 text-white py-2 rounded-lg text-sm font-semibold hover:bg-brand-gold transition-colors" target="_blank" rel="noopener noreferrer">
+                        Buy on Amazon
+                    </a>
+                </div>
+            </div>
+        `;
+        bookGrid.appendChild(card);
+    });
+
+    // 4. MOBILE MENU TOGGLE
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    if (mobileBtn && mobileMenu) {
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    }
+
+    // 5. SCROLL ANIMATION
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    setTimeout(() => {
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    }, 100);
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
