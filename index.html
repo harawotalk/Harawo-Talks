@@ -6,7 +6,6 @@
     <title>Abdullahi Ibrahim | Author & Storyteller</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
-    
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
@@ -93,10 +92,10 @@
                 <div class="relative group">
                     <div class="absolute inset-0 bg-[#d97706] rounded-2xl transform translate-x-3 translate-y-3 transition-transform group-hover:translate-x-2 group-hover:translate-y-2"></div>
                     <img 
-    src="images/author.jpg" 
-    alt="Abdullahi Ibrahim"
-    class="relative z-10 w-full h-auto rounded-2xl shadow-xl grayscale hover:grayscale-0 transition-all duration-500 object-cover aspect-[4/5]"
-/>
+                        src="images/author.jpg" 
+                        alt="Abdullahi Ibrahim"
+                        class="relative z-10 w-full h-auto rounded-2xl shadow-xl grayscale hover:grayscale-0 transition-all duration-500 object-cover aspect-[4/5]"
+                    />
                 </div>
 
                 <div>
@@ -133,7 +132,6 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-                
                 <div class="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 flex flex-col h-full hover:transform hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
                     <div class="relative overflow-hidden rounded-xl bg-gray-200 mb-4 aspect-[2/3]">
                         <img src="images/language-of-silence.jpg" onerror="this.src='https://placehold.co/400x600?text=Silence'" class="w-full h-full object-cover">
@@ -181,11 +179,11 @@
                         <div class="mt-auto"><a href="https://www.amazon.com/dp/B0DDSXD66C" class="block w-full text-center bg-gray-900 text-white py-2 rounded-lg text-sm font-semibold hover:bg-[#d97706] transition-colors">Buy on Amazon</a></div>
                     </div>
                 </div>
-                 
             </div>
         </div>
     </section>
 
+    <!-- BLOG SECTION – now dynamic -->
     <section id="blog" class="py-24 bg-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -196,113 +194,79 @@
                 </p>
             </div>
 
-            <article class="flex flex-col md:flex-row gap-6 p-6 rounded-2xl border border-gray-200 hover:shadow-lg transition-all bg-white mb-8">
-                <div class="md:w-1/4">
-                    <span class="text-sm text-gray-400 font-semibold">Nov 24, 2025</span>
-                    <div class="mt-2 text-[#1e3a8a] font-bold text-sm uppercase">Reflection</div>
-                </div>
-                <div class="md:w-3/4">
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">The Courage to Start Over</h3>
-                    <p class="text-gray-600 mb-4">
-                        Starting over is never easy. It asks for a kind of bravery that happens in silence — in early mornings,
-                        long nights, and moments when no one sees you.
-                    </p>
-                    <a href="blog-courage-to-start-over.html" class="inline-flex items-center text-sm font-semibold text-[#d97706] hover:text-[#1e3a8a] transition-colors">
-                        Read Full Post <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
-                    </a>
-                </div>
-            </article>
-
-            <article class="flex flex-col md:flex-row gap-6 p-6 rounded-2xl border border-gray-200 hover:shadow-lg transition-all bg-white">
-                <div class="md:w-1/4">
-                    <span class="text-sm text-gray-400 font-semibold">Nov 10, 2025</span>
-                    <div class="mt-2 text-[#1e3a8a] font-bold text-sm uppercase">Writing</div>
-                </div>
-                <div class="md:w-3/4">
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Why I Write Mystery Fiction</h3>
-                    <p class="text-gray-600 mb-4">
-                        Mystery fiction is more than suspense; it is a mirror into human behavior. When characters are under pressure,
-                        their true nature rises to the surface.
-                    </p>
-                    <a href="blog-why-i-write-mystery-fiction.html" class="inline-flex items-center text-sm font-semibold text-[#d97706] hover:text-[#1e3a8a] transition-colors">
-                        Read Full Post <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
-                    </a>
-                </div>
-            </article>
+            <!-- Firebase will inject posts here -->
+            <div id="blog-posts"></div>
         </div>
     </section>
-<section id="contact" class="py-24 bg-gray-900 text-white relative overflow-hidden">
-  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <div class="text-center mb-12">
-      <h2 class="font-serif text-3xl md:text-4xl font-bold mb-4">Let's Connect</h2>
-      <p class="text-gray-400 mb-6">
-        Have a question about my books, speaking, or just want to say hello?
-      </p>
 
-      <div class="flex justify-center mb-4">
-        <a href="mailto:abdullahbrahiim@gmail.com"
-           class="inline-flex items-center px-8 py-4 bg-[#1e3a8a] text-white rounded-full hover:bg-blue-800 transition-all shadow-md hover:shadow-lg font-bold">
-          <i data-lucide="mail" class="w-5 h-5 mr-2"></i> Contact via Email
-        </a>
-      </div>
-      <p class="text-xs text-gray-500">You can also send a message using the form below.</p>
-    </div>
+    <section id="contact" class="py-24 bg-gray-900 text-white relative overflow-hidden">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-12">
+                <h2 class="font-serif text-3xl md:text-4xl font-bold mb-4">Let's Connect</h2>
+                <p class="text-gray-400 mb-6">
+                    Have a question about my books, speaking, or just want to say hello?
+                </p>
 
-    <!-- Netlify form -->
-    <form
-  action="https://formsubmit.co/abdullahbrahiim@gmail.com"
-  method="POST"
-  class="space-y-6"
->
-  <!-- after submit, go back to the homepage (no 404) -->
-  <input type="hidden" name="_next" value="https://harawotalk.com">
-  <!-- turn off the captcha screen -->
-  <input type="hidden" name="_captcha" value="false">
+                <div class="flex justify-center mb-4">
+                    <a href="mailto:abdullahbrahiim@gmail.com"
+                       class="inline-flex items-center px-8 py-4 bg-[#1e3a8a] text-white rounded-full hover:bg-blue-800 transition-all shadow-md hover:shadow-lg font-bold">
+                      <i data-lucide="mail" class="w-5 h-5 mr-2"></i> Contact via Email
+                    </a>
+                </div>
+                <p class="text-xs text-gray-500">You can also send a message using the form below.</p>
+            </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div>
-          <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2">Name</label>
-          <input
-            type="text"
-            name="name"
-            required
-            class="w-full bg-gray-800 border border-gray-700 rounded-lg p-4 text-white focus:outline-none focus:border-[#d97706] focus:ring-1 focus:ring-[#d97706] transition-colors"
-            placeholder="Your Name"
-          >
+            <form
+              action="https://formsubmit.co/abdullahbrahiim@gmail.com"
+              method="POST"
+              class="space-y-6"
+            >
+              <input type="hidden" name="_next" value="https://harawotalk.com">
+              <input type="hidden" name="_captcha" value="false">
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2">Name</label>
+                  <input
+                    type="text"
+                    name="name"
+                    required
+                    class="w-full bg-gray-800 border border-gray-700 rounded-lg p-4 text-white focus:outline-none focus:border-[#d97706] focus:ring-1 focus:ring-[#d97706] transition-colors"
+                    placeholder="Your Name"
+                  >
+                </div>
+                <div>
+                  <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2">Email</label>
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    class="w-full bg-gray-800 border border-gray-700 rounded-lg p-4 text-white focus:outline-none focus:border-[#d97706] focus:ring-1 focus:ring-[#d97706] transition-colors"
+                    placeholder="your@email.com"
+                  >
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2">Message</label>
+                <textarea
+                  name="message"
+                  rows="5"
+                  required
+                  class="w-full bg-gray-800 border border-gray-700 rounded-lg p-4 text-white focus:outline-none focus:border-[#d97706] focus:ring-1 focus:ring-[#d97706] transition-colors"
+                  placeholder="How can I help you?"
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                class="w-full bg-[#d97706] hover:bg-amber-700 text-white font-bold py-4 rounded-lg transition-all shadow-lg transform hover:-translate-y-1"
+              >
+                Send Message
+              </button>
+            </form>
         </div>
-        <div>
-          <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2">Email</label>
-          <input
-            type="email"
-            name="email"
-            required
-            class="w-full bg-gray-800 border border-gray-700 rounded-lg p-4 text-white focus:outline-none focus:border-[#d97706] focus:ring-1 focus:ring-[#d97706] transition-colors"
-            placeholder="your@email.com"
-          >
-        </div>
-      </div>
-
-      <div>
-        <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2">Message</label>
-        <textarea
-          name="message"
-          rows="5"
-          required
-          class="w-full bg-gray-800 border border-gray-700 rounded-lg p-4 text-white focus:outline-none focus:border-[#d97706] focus:ring-1 focus:ring-[#d97706] transition-colors"
-          placeholder="How can I help you?"
-        ></textarea>
-      </div>
-
-      <button
-        type="submit"
-        class="w-full bg-[#d97706] hover:bg-amber-700 text-white font-bold py-4 rounded-lg transition-all shadow-lg transform hover:-translate-y-1"
-      >
-        Send Message
-      </button>
-    </form>
-  </div>
-</section>
- 
+    </section>
 
     <footer class="bg-gray-950 text-gray-500 py-8 border-t border-gray-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
@@ -356,10 +320,8 @@
     </div>
 
     <script>
-        // 1. Initialize Icons
         lucide.createIcons();
 
-        // 2. Mobile Menu Toggle
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             if (menu.classList.contains('hidden')) {
@@ -369,7 +331,6 @@
             }
         }
 
-        // 3. Chat Widget Logic
         const chatWindow = document.getElementById('chat-window');
         const chatInput = document.getElementById('chat-input');
         const chatMessages = document.getElementById('chat-messages');
@@ -388,7 +349,6 @@
             const text = chatInput.value;
             if (!text.trim()) return;
 
-            // Add User Message
             const userDiv = document.createElement('div');
             userDiv.className = 'flex justify-end';
             userDiv.innerHTML = `<div class="bg-[#1e3a8a] text-white rounded-lg rounded-br-none p-3 text-sm max-w-[85%]">${text}</div>`;
@@ -397,7 +357,6 @@
             chatInput.value = '';
             chatMessages.scrollTop = chatMessages.scrollHeight;
 
-            // Simulate AI Response (Demo Mode)
             setTimeout(() => {
                 const aiDiv = document.createElement('div');
                 aiDiv.className = 'flex justify-start';
@@ -409,7 +368,6 @@
             }, 1000);
         }
 
-        // Allow "Enter" key to send
         chatInput.addEventListener("keypress", function(event) {
             if (event.key === "Enter") {
                 sendMessage();
@@ -417,20 +375,96 @@
         });
     </script>
 
-<!-- Netlify Identity widget + redirect to /admin -->
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-<script>
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", function (user) {
-      if (!user) {
-        window.netlifyIdentity.on("login", function () {
-          document.location.href = "/admin/";
+    <!-- Netlify Identity widget + redirect to /admin -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", function (user) {
+          if (!user) {
+            window.netlifyIdentity.on("login", function () {
+              document.location.href = "/admin/";
+            });
+          }
         });
       }
-    });
-  }
-</script>
+    </script>
+
+    <!-- Firebase: load dynamic blog posts -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-app.js";
+      import { 
+        getFirestore, collection, getDocs, query, orderBy 
+      } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-firestore.js";
+
+      // TODO: paste your actual config from Firebase console
+      const firebaseConfig = {
+        apiKey: "YOUR_API_KEY_HERE",
+        authDomain: "YOUR_AUTH_DOMAIN_HERE",
+        projectId: "YOUR_PROJECT_ID_HERE",
+        storageBucket: "YOUR_STORAGE_BUCKET_HERE",
+        messagingSenderId: "YOUR_SENDER_ID_HERE",
+        appId: "YOUR_APP_ID_HERE"
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const db  = getFirestore(app);
+
+      async function loadBlogPosts() {
+        const container = document.getElementById("blog-posts");
+        if (!container) return;
+
+        container.innerHTML = "<p class='text-gray-500'>Loading posts…</p>";
+
+        const appId = "harawotalks-backend"; // same as your Firestore doc id
+
+        try {
+          const postsQuery = query(
+            collection(db, "artifacts", appId, "public", "data", "posts"),
+            orderBy("createdAt", "desc")
+          );
+
+          const snapshot = await getDocs(postsQuery);
+
+          if (snapshot.empty) {
+            container.innerHTML = "<p class='text-gray-500'>No posts yet.</p>";
+            return;
+          }
+
+          let html = "";
+          snapshot.forEach((doc) => {
+            const p = doc.data();
+
+            let dateText = "";
+            if (p.createdAt && p.createdAt.seconds) {
+              const d = new Date(p.createdAt.seconds * 1000);
+              dateText = d.toLocaleDateString();
+            }
+
+            html += `
+              <article class="flex flex-col md:flex-row gap-6 p-6 rounded-2xl border border-gray-200 hover:shadow-lg transition-all bg-white mb-8">
+                <div class="md:w-1/4">
+                  <span class="text-sm text-gray-400 font-semibold">${dateText || ""}</span>
+                  <div class="mt-2 text-[#1e3a8a] font-bold text-sm uppercase">${p.category || ""}</div>
+                </div>
+                <div class="md:w-3/4">
+                  <h3 class="text-xl font-bold text-gray-900 mb-2">${p.title || ""}</h3>
+                  <p class="text-gray-600 mb-4">
+                    ${p.content || ""}
+                  </p>
+                </div>
+              </article>
+            `;
+          });
+
+          container.innerHTML = html;
+        } catch (err) {
+          console.error("Error loading posts", err);
+          container.innerHTML = "<p class='text-red-500'>Failed to load posts.</p>";
+        }
+      }
+
+      loadBlogPosts();
+    </script>
 
 </body>
-
 </html>
