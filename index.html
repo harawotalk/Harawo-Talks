@@ -376,6 +376,86 @@
                 sendMessage();
             }
         });
+        <script type="module">
+  // 1. Firebase imports from CDN
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+  import { 
+    getFirestore,
+    collection,
+    query,
+    orderBy,
+    getDocs
+  } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+
+  // 2. COPY THIS from your backend.js (exact same object!)
+  const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_AUTH_DOMAIN",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_STORAGE_BUCKET",
+    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+    appId: "YOUR_APP_ID"
+  };
+
+  // 3. Use the SAME appId string you see near the top of backend.js
+  //    (whatever you used there – copy-paste it here)
+  const appId = "YOUR_APP_ID_STRING_FROM_backend_js";
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  async function loadPosts() {
+    const listEl = document.getElementById("blog-posts");
+    const emptyEl = document.getElementById("blog-empty");
+
+    try {
+      const q = query(
+        collection(db, "artifacts", appId, "public", "data", "posts"),
+        orderBy("createdAt", "desc")
+      );
+
+      const snap = await getDocs(q);
+
+      if (snap.empty) {
+        emptyEl.style.display = "block";
+        return;
+      }
+
+      emptyEl.style.display = "none";
+
+      let html = "";
+      snap.forEach(doc => {
+        const p = doc.data();
+        const ts = p.createdAt;
+        const date = ts && ts.toDate ? ts.toDate() : null;
+        const dateStr = date ? date.toLocaleDateString() : "";
+
+        html += `
+          <article class="flex flex-col md:flex-row gap-6 p-6 rounded-2xl border border-gray-200 hover:shadow-lg transition-all bg-white mb-8">
+            <div class="md:w-1/4">
+              <span class="text-sm text-gray-400 font-semibold">${dateStr}</span>
+              <div class="mt-2 text-[#1e3a8a] font-bold text-sm uppercase">${p.category || ""}</div>
+            </div>
+            <div class="md:w-3/4">
+              <h3 class="text-xl font-bold text-gray-900 mb-2">${p.title || ""}</h3>
+              <p class="text-gray-600 mb-4">
+                ${p.excerpt || ""}
+              </p>
+            </div>
+          </article>
+        `;
+      });
+
+      listEl.innerHTML = html;
+    } catch (err) {
+      console.error("Error loading posts:", err);
+      emptyEl.textContent = "Error loading posts.";
+      emptyEl.style.display = "block";
+    }
+  }
+
+  loadPosts();
+</script>
     </script>
 
     <!-- Netlify Identity widget + redirect to /admin -->
@@ -471,4 +551,5 @@
 
 </body>
 </html>
+
 
