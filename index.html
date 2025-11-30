@@ -185,19 +185,22 @@
 
     <!-- BLOG SECTION – now dynamic -->
     <section id="blog" class="py-24 bg-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <span class="text-[#d97706] font-bold uppercase tracking-widest text-xs">The Blog</span>
-                <h2 class="font-serif text-4xl font-bold text-gray-900 mt-2">HarawoTalks</h2>
-                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
-                    Reflections on struggle, resilience, identity, and the quiet moments that shape who we become.
-                </p>
-            </div>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <span class="text-[#d97706] font-bold uppercase tracking-widest text-xs">The Blog</span>
+      <h2 class="font-serif text-4xl font-bold text-gray-900 mt-2">HarawoTalks</h2>
+      <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+        Reflections on struggle, resilience, identity, and the quiet moments that shape who we become.
+      </p>
+    </div>
 
-            <!-- Firebase will inject posts here -->
-            <div id="blog-posts"></div>
-        </div>
-    </section>
+    <!-- This shows when there are no posts / or while loading -->
+    <p id="blog-empty" class="text-gray-400 text-sm">No posts yet.</p>
+
+    <!-- React/Firestore-style posts will be injected here -->
+    <div id="blog-posts"></div>
+  </div>
+</section>
 
     <section id="contact" class="py-24 bg-gray-900 text-white relative overflow-hidden">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -468,3 +471,4 @@
 
 </body>
 </html>
+
